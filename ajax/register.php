@@ -6,9 +6,9 @@
 	// Require the config
 	require_once "../inc/config.php"; 
 
-	if($_SERVER['REQUEST_METHOD'] == 'POST' or 1==1) {
+	if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		// Always return JSON format
-		// header('Content-Type: application/json');
+		header('Content-Type: application/json');
 
 		$return = [];
 
@@ -38,7 +38,7 @@
 
 			$_SESSION['user_id'] = (int) $user_id;
 
-			$return['redirect'] = '/dashboard.php?message=welcome';
+			$return['redirect'] = '/php-login-system/dashboard.php?message=welcome';
 			$return['is_logged_in'] = true;
 		}
 
